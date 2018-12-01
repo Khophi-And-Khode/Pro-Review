@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-      <title>ProView | Dashboard</title>
+      <title>ProReview | Dashboard</title>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
       <link rel="shortcut icon" type="image/png" href="/favicon.png"/>
@@ -89,48 +89,48 @@
       </div> -->
     </section>
 
-    <section class="uk-container uk-margin-large-top uk-background-muted">
-      <div>
-        <h2 class="uk-heading-bullet uk-padding-small"><span class="uk-text-bold">Recent Products</span></h2>
-        <hr class="uk-hr uk-margin-small">
+    <section class="uk-grid-margin uk-margin-large-top uk-child-width-1-2" uk-grid>
+      <div class=" uk-background-muted">
+        <div>
+          <h2 class="uk-heading-bullet uk-padding-small"><span class="uk-text-bold">Products</span></h2>
+          <hr class="uk-hr uk-margin-small">
+        </div>
+        <div class="uk-margin">
+          <table class="uk-table uk-table-striped uk-table-hover uk-table-divider">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Comments</th>
+                </tr>
+            </thead>
+            <tbody class="products">
+            </tbody>
+          </table>
+        </div>
       </div>
-      <div class="uk-margin">
-        <table class="uk-table uk-table-striped uk-table-hover uk-table-divider">
-          <thead>
-              <tr>
-                  <th>Table Heading</th>
-                  <th>Table Heading</th>
-                  <th>Table Heading</th>
-                  <th></th>
-              </tr>
-          </thead>
-          <tbody>
-              <tr>
-                  <td>Table Data</td>
-                  <td>Table Data</td>
-                  <td>Table Data</td>
-                  <td><a href="#modal-example" uk-toggle uk-icon="icon: info"></a> <a href="#" uk-icon="icon: check"></a> <a href="#" uk-icon="icon: trash"></a></td>
-              </tr>
-              <tr>
-                  <td>Table Data</td>
-                  <td>Table Data</td>
-                  <td>Table Data</td>
-                  <td><a href="#modal-example" uk-toggle uk-icon="icon: info"></a> <a href="#" uk-icon="icon: check"></a> <a href="#" uk-icon="icon: trash"></a></td>
-              </tr>
-              <tr>
-                  <td>Table Data</td>
-                  <td>Table Data</td>
-                  <td>Table Data</td>
-                  <td><a href="#modal-example" uk-toggle uk-icon="icon: info"></a> <a href="#" uk-icon="icon: check"></a> <a href="#" uk-icon="icon: trash"></a></td>
-              </tr>
-          </tbody>
-        </table>
+      <div class="">
+        <div>
+          <h2 class="uk-heading-bullet uk-padding-small"><span class="uk-text-bold">Product Requests</span></h2>
+          <hr class="uk-hr uk-margin-small">
+        </div>
+        <div class="uk-margin">
+          <table class="uk-table uk-table-striped uk-table-hover uk-table-divider">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Message</th>
+                </tr>
+            </thead>
+            <tbody class="requests">
+            </tbody>
+          </table>
+        </div>
       </div>
     </section>
 
     <div class="uk-background-muted uk-margin-large-top">
       <div class="uk-padding-large">
-        <p class="uk-text-center">&copy; Copyright ProView</p>
+        <p class="uk-text-center">&copy; Copyright ProReview</p>
       </div>
     </div>
 
@@ -150,21 +150,24 @@
             <h2 class="uk-modal-title">Add Product</h2>
             <form class="form" method="post" action="/controller/" enctype="multipart/form-data">
                 <fieldset class="uk-fieldset">
-
+                    <div class="uk-alert-success uk-hidden" uk-alert>
+                        <a class="uk-alert-close" uk-close></a>
+                        <p>Product Upload Successful</p>
+                    </div>
                     <legend class="uk-legend">Legend</legend>
 
                     <div class="uk-margin">
-                        <input class="uk-input" name="name" type="text" placeholder="Product Name">
+                        <input class="uk-input" name="name" type="text" required placeholder="Product Name">
                     </div>
 
 
                     <div class="uk-margin">
-                        <textarea class="uk-textarea" name="description" rows="5" placeholder="Textarea"></textarea>
+                        <textarea class="uk-textarea" name="description" required rows="5" placeholder="Textarea"></textarea>
                     </div>
 
                     <div class="uk-margin">
                         <div uk-form-custom>
-                            <input type="file" name="file" id="file" accept="image/*">
+                            <input type="file" name="file" id="file" required accept="image/*">
                             <button class="uk-button uk-button-default uk-button-primary" type="button" tabindex="-1">Select Image</button>
                         </div>
                     </div>

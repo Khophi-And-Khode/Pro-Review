@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-      <title><?php echo (isset($title)) ? $title : 'Home'; ?> | ProView</title>
+      <title><?php echo (isset($title)) ? $title : 'Home'; ?> | ProReview</title>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
       <link rel="shortcut icon" type="image/jpg" href="/favicon.jpg"/>
@@ -32,7 +32,7 @@
   <body style="display: none;">
     <div class="uk-container uk-padding uk-padding-remove-bottom uk-margin-small-bottom uk-text-center">
       <div class="uk-margin-large-top"></div>
-      <h3 class="uk-heading-primary uk-text-primary uk-text-bold">ProView</h3>
+      <h3 class="uk-heading-primary uk-text-primary uk-text-bold">ProReview</h3>
       <!-- <img src="../view/assets/img/logo.jpg" class="uk-align-center uk-margin-large-top"> -->
     </div>
     <nav class="uk-navbar-container uk-navbar-transparent uk-margin-medium uk-margin-remove-top" style="background: #fff;" uk-navbar uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky">
@@ -41,9 +41,19 @@
               <!-- <li class="uk-active"><a href="home">Home</a></li> -->
               <li><a class="uk-text-primary" href="/home" uk-icon="icon: home" uk-tooltip="title: Home; pos: left"></a></li>
               <li><a class="uk-text-primary" href="#modal-close-outside" uk-toggle uk-icon="icon: search" uk-tooltip="title: Search; pos: left"></a></li>
-              <li><a class="uk-text-primary" href="#modal-close-outside" uk-toggle uk-icon="icon: sign-in" uk-tooltip="title: Sign In; pos: left"></a></li>
-              <li><a class="uk-text-primary" href="home#" uk-icon="icon: sign-out" uk-tooltip="title: Sign Out; pos: left"></a></li>
+              <?php if (!isset($_SESSION['username'])): ?>
+                <li><a class="uk-text-primary" href="#modal-login" uk-toggle uk-icon="icon: sign-in" uk-tooltip="title: Sign In; pos: left"></a></li>
+              <?php else: ?>
+                <li><a class="uk-text-primary" href="logout" uk-icon="icon: sign-out" uk-tooltip="title: Sign Out; pos: left"></a></li>
+              <?php endif ?>
               <li><a class="uk-text-primary" href="#modal-full" uk-toggle>Request a product review</a></li>
           </ul>
         </div>
+        <?php if (isset($_SESSION['username'])): ?>
+          <div class="uk-navbar-right">
+            <ul class="uk-navbar-nav">
+              <li><a href="#" id="username"><?php echo Session::get('username'); ?></a></li>
+            </ul>
+          </div>
+        <?php endif ?>
     </nav>

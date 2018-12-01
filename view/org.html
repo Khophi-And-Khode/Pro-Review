@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pro Review</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" href="#" />
+    <link rel="stylesheet" href="/view/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/wenstrap.css" />
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <div class="panel panel-info">
+                <div class="panel-heading"><h3>Organization</h3></div>
+                <div class="panel-body">
+                    <h4><input type="text" disabled id="product" /></h4><br>
+                    <hr>
+                    <h5><label>Customer Feedback</label></h5>
+                    <table class="table table-striped">
+                        <thead >
+                        <td><label>Customer Name</label></td>
+                        <td><label>Comment</label></td>
+                        </thead>
+                        <tbody>
+                        <td>
+                            <input disabled type="text" id="name"/>
+                        </td>
+                        <td>
+                            <input id="cusfeed" name="cusfeed" type="text" disabled></input>
+                        </td>
+                        <td>
+                            <input id="reply" name="reply" type="text" placeholder="reply here"/>
+                            <button id="reply_btn" name="reply_btn" type="submit"><span class="glyphicon glyphicon-send"></span></button>
+                        </td>
+                        </tbody>
+                    </table>
+                    <br>
+                    <hr>
+                    <br>
+                    <h5>Rating Avg(/5)</h5>
+                    <table class="table table-striped">
+                        <thead >
+                        <td><label>Customer Name</label></td>
+                        <td><label>Rating(/5)</label></td>
+                        </thead>
+                        <tbody>
+                        <td>
+                            <input id="cusname" name="cusname" type="text" disabled />
+                        </td>
+                        <td>
+                            <input id="rating" name="rating" type="text" disabled />
+                        </td>
+                        </tbody>
+                    </table>
+
+                    <div>
+                        <h4><label>Customer Location</label></h4>
+                        <!-- embedding google map for location -->
+                        <div style="width: 550px;height: 200px">
+                            <iframe width="100%" height="200" src="https://maps.google.com/maps?width=100%&amp;height=600&amp;hl=en&amp;q=1%20Grafton%20Street%2C%20Dublin%2C%20Ireland+(My%20Business%20Name)&amp;ie=UTF8&amp;t=&amp;z=14&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
+                                <a href="https://www.maps.ie/map-my-route/">Create a route on google maps</a>
+                            </iframe></div><br />
+                    </div>
+
+                </div>
+                <div class="panel-footer"></div>
+            </div>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+</div>
+
+    <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="../view/assets/js/jquery.min.js"></script>
+    <script src="../view/assets/js/jqueryForm.js"></script>
+    <script src="../view/assets/js/index.js"></script>
+    <script src="../view/assets/js/app.js"></script>
+  </body>
+</html> 
